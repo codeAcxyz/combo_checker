@@ -23,7 +23,7 @@ lst = list(map(str.strip, lst))
 length_of_combos = len(lst)
 options = Options()
 options.add_argument('--headless')
-driver = webdriver.Chrome(executable_path="C:\\chromedriver_win32\\chromedriver.exe", options=options)
+driver = webdriver.Chrome(executable_path="chromedriver.exe", options=options)
 driver.get(url)
 driver.maximize_window()
 
