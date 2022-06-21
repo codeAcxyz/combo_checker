@@ -1,5 +1,4 @@
 import time
-import threading
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import requests
@@ -111,12 +110,8 @@ def for_tab(arr, start, end, step):
     send_msg("step " + str(step) + " done ----> " + str(start) + " , " + str(end))
 
 
-# driver.switch_to.window(driver.window_handles[-1])
-
-
 if __name__ == '__main__':
     steps = length_of_combos / 500
-    lst[515]="XV4Q3-D67LS-47LKB-8WD3W"
     print("Total_combos - " + str(length_of_combos) + " Total_steps - " + str(steps))
     send_msg("Total_combos - " + str(length_of_combos) + " Total_steps - " + str(steps))
     end_index = 500
@@ -128,11 +123,3 @@ if __name__ == '__main__':
             s_index = end_index
             end_index = end_index + 500
         for_tab(lst[s_index:end_index], s_index, end_index, i)
-
-    # t1 = threading.Thread(target=genrating_tabs, args=(lst[0:500],))
-    # t2 = threading.Thread(target=genrating_tabs, args=(lst[500:1000],))
-    # t1.start()
-    # t2.start()
-
-    # t1.join()
-    # t2.join()
