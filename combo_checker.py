@@ -90,6 +90,7 @@ def is_inactiveData():
 
 
 def for_tab(arr, start, end, step):
+    print("start step")
     global driver
     driver.refresh()
     data = ""
