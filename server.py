@@ -3,7 +3,7 @@ import os
 from PIL import Image
 import threading
 
-HOST = "127.0.0.1"
+HOST = "172.31.3.253"
 PORT = 8080
 print(socket.gethostname())
 s = socket.socket()
