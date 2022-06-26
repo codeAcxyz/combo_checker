@@ -4,7 +4,7 @@ from PIL import Image
 from vidstream import StreamingServer
 import threading
 
-HOST = socket.gethostname()
+HOST = "121.0.0.1"
 PORT = 8080
 print(socket.gethostname())
 s = socket.socket()
